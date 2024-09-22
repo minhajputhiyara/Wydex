@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wydex Media Clients</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+        }
+        .clients-section {
+            position: relative;
+            padding: 4rem 2rem 4rem 6rem;
+        }
+        .vertical-text {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%) rotate(180deg);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+        }
+        .logo-item {
+            background-color: #333;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 1 / 1;
+        }
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        @media (max-width: 1024px) {
+            .logo-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .logo-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .logo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .clients-section {
+                padding-left: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="clients-section">
+        <div class="vertical-text">CLIENTS</div>
+        <div class="section-content">
+            <h2 class="text-3xl">Clients</h2>
+            <p class="text-lg">Trusted by businesses of all sizes, we proudly partner with industry leaders and growing brands to drive digital success. Here are some of the clients we've had the privilege to work with.</p>
+            <div class="logo-grid">
+                <div class="logo-item"><img src="images/logo1.png" alt="Client 1"></div>
+                <div class="logo-item"><img src="images/logo2.png" alt="Client 2"></div>
+                <div class="logo-item"><img src="images/logo3.png" alt="Client 3"></div>
+                <div class="logo-item"><img src="images/logo4.png" alt="Client 4"></div>
+                <div class="logo-item"><img src="images/logo5.png" alt="Client 5"></div>
+                <div class="logo-item"><img src="images/logo6.png" alt="Client 6"></div>
+                <div class="logo-item"><img src="images/logo7.png" alt="Client 7"></div>
+                <div class="logo-item"><img src="images/logo8.png" alt="Client 8"></div>
+                <div class="logo-item"><img src="images/logo9.png" alt="Client 9"></div>
+                <div class="logo-item"><img src="images/logo10.png" alt="Client 10"></div>
+                <div class="logo-item"><img src="images/logo11.png" alt="Client 11"></div>
+                <div class="logo-item"><img src="images/logo12.png" alt="Client 12"></div>
+                <div class="logo-item"><img src="images/logo13.png" alt="Client 13"></div>
+                <div class="logo-item"><img src="images/logo14.png" alt="Client 14"></div>
+                <div class="logo-item"><img src="images/logo15.png" alt="Client 15"></div>
+                <div class="logo-item"><img src="images/logo16.png" alt="Client 16"></div>
+                <div class="logo-item"><img src="images/logo17.png" alt="Client 17"></div>
+                <div class="logo-item"><img src="images/logo18.png" alt="Client 18"></div>
+                <div class="logo-item"><img src="images/logo19.png" alt="Client 19"></div>
+                <div class="logo-item"><img src="images/logo20.png" alt="Client 20"></div>
+                <div class="logo-item"><img src="images/logo21.png" alt="Client 21"></div>
+                <div class="logo-item"><img src="images/logo22.png" alt="Client 22"></div>
+                <div class="logo-item"><img src="images/logo23.png" alt="Client 23"></div>
+                <div class="logo-item"><img src="images/logo24.png" alt="Client 24"></div>
+                <div class="logo-item"><img src="images/logo25.png" alt="Client 25"></div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

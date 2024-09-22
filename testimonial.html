@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - Wydex Media</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .testimonial-slider {
+            transition: transform 0.3s ease-in-out;
+        }
+        .sidebar {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex">
+            <!-- Sidebar -->
+            <div class="sidebar bg-gray-300 text-gray-700 px-2 py-4 mr-4 font-bold">
+                TESTIMONIALS
+            </div>
+            
+            <!-- Main content -->
+            <div class="flex-grow">
+                <h2 class="text-4xl font-bold mb-8">They are satisfied with the<br>results we provide</h2>
+                
+                <div class="relative overflow-hidden">
+                    <div class="testimonial-slider flex transition-transform duration-300 ease-in-out">
+                        <!-- Testimonial 1 -->
+                        <div class="w-full flex-shrink-0">
+                            <p class="text-gray-600 mb-4">Exceptional service! The team at Wydex Media helped us boost our online presence and triple our website traffic in just six months. Their personalized approach and constant support made a real difference. Highly recommended!</p>
+                            <p class="font-bold">-John D.,</p>
+                            <p class="text-gray-500">CEO of BrightTech Solutions</p>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="w-full flex-shrink-0">
+                            <p class="text-gray-600 mb-4">The Wydex Media team truly understands how to craft a digital strategy that works. They helped us grow our social media following and engagement while driving more sales through targeted content and email campaigns. They exceeded our expectations!</p>
+                            <p class="font-bold">Michael B</p>
+                            <p class="text-gray-500">Founder of UrbanStyle Apparel</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation buttons -->
+                    <div class="absolute top-1/2 transform -translate-y-1/2 w-full flex justify-between">
+                        <button class="prev-btn bg-orange-400 text-white rounded-full w-10 h-10 flex items-center justify-center focus:outline-none">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="next-btn bg-orange-400 text-white rounded-full w-10 h-10 flex items-center justify-center focus:outline-none">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.testimonial-slider');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentIndex = 0;
+
+        function showTestimonial(index) {
+            slider.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + 2) % 2;  // Assuming 2 testimonials
+            showTestimonial(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % 2;  // Assuming 2 testimonials
+            showTestimonial(currentIndex);
+        });
+    </script>
+</body>
+</html>

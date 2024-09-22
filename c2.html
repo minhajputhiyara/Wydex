@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wydex Media Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        .sidebar {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+        .service-item {
+            border-bottom: 1px solid #333;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex">
+            <!-- Sidebar -->
+            <div class="sidebar bg-gray-800 text-gray-400 px-2 py-4 mr-4">
+                ABOUT US
+            </div>
+            
+            <!-- Main content -->
+            <div class="flex-grow">
+                <h2 class="text-3xl font-bold mb-4">At <span class="bg-teal-600 px-2">Wydex media,</span> we are a digital marketing agency</h2>
+                <p class="mb-2">focused on driving growth and elevating brands online.</p>
+                <p class="text-gray-400 mb-4">Our expert team crafts tailored strategies that boost engagement and deliver measurable results. Let us help you achieve digital success.</p>
+                
+                <p class="text-sm mb-4">Our team of experts consist of digital marketers, web developers, UI/UX designers, and other creative professionals who are passionate about creating amazing digital experiences.</p>
+                
+                <button class="bg-teal-600 text-white px-4 py-2 rounded-full mb-8">Know more</button>
+                
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-4xl font-bold">Core Services</h2>
+                    <div>
+                        <p class="text-sm mb-2">The best service we offer to you and we are ready to realize</p>
+                        <p class="text-sm">the ideas you given us as best as possible</p>
+                    </div>
+                </div>
+                
+                <button class="bg-teal-600 text-white px-4 py-2 rounded-full mb-8">Explore our Services</button>
+                
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <div class="service-item pb-4 mb-4">
+                            <h3 class="text-xl font-semibold mb-2">01 SEO Optimization</h3>
+                            <p class="text-sm text-gray-400">We optimize your website to rank higher on search engines, driving organic traffic and increasing visibility through keyword targeting, on-page SEO, and link building.</p>
+                        </div>
+                        <div class="service-item pb-4 mb-4">
+                            <h3 class="text-xl font-semibold mb-2">02 Social Media Marketing</h3>
+                            <p class="text-sm text-gray-400">Grow your brand's presence on platforms like Facebook and Instagram with targeted content, paid ads, and community engagement that boosts reach and conversions.</p>
+                        </div>
+                        <div class="service-item pb-4 mb-4">
+                            <h3 class="text-xl font-semibold mb-2">03 Web Design & Development</h3>
+                            <p class="text-sm text-gray-400">We build custom, responsive websites optimized for user experience, speed, and functionality to elevate your online presence and enhance conversions.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="path_to_social_media_icons_image.png" alt="Social Media Icons" class="max-w-full h-auto">
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-bounce">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="8 12 12 16 16 12"></polyline>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

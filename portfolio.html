@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Be inspired by our work</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        .sidebar {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+        .portfolio-card {
+            background-color: #2a2a2a;
+            border-radius: 15px;
+        }
+        .tag {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex">
+            <!-- Sidebar -->
+            <div class="sidebar bg-gray-800 text-gray-400 px-2 py-4 mr-4">
+                PORTFOLIO
+            </div>
+            
+            <!-- Main content -->
+            <div class="flex-grow">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="max-w-xl">
+                        <p class="text-gray-400 mb-4">More than 25 successful projects, more than 30 satisfied clients. Join us on this creative journey with many success stories and see how we bring companies and businesses to life.</p>
+                    </div>
+                    <h2 class="text-4xl font-bold">Be inspired by<br>our work</h2>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- Portfolio Item 1 -->
+                    <div class="portfolio-card p-4">
+                        <img src="pf1.jpg" alt="Nielo Project" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <img src="l1.png" alt="Nielo Logo" class="h-8">
+                            <span class="text-gray-400">2024</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag">SOCIAL MEDIA</span>
+                            <span class="tag">PERFORMANCE MARKETING</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Item 2 -->
+                    <div class="portfolio-card p-4">
+                        <img src="pf2.jpg" alt="Nadian Blogger's Project" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <img src="l2.png" alt="Nadian Blogger's Logo" class="h-8">
+                            <span class="text-gray-400">2024</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag">PACKAGE DESIGN</span>
+                            <span class="tag">PERFORMANCE MARKETING</span>
+                            <span class="tag">BRANDING</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Item 3 -->
+                    <div class="portfolio-card p-4">
+                        <img src="pf3.jpg" alt="Proskill Project" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <img src="l3.png" alt="Proskill Logo" class="h-8">
+                            <span class="text-gray-400">2024</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag">SOCIAL MEDIA</span>
+                            <span class="tag">PERFORMANCE MARKETING</span>
+                            <span class="tag">BRANDING</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Item 4 -->
+                    <div class="portfolio-card p-4">
+                        <img src="pf4.jpg" alt="Zelebrae Project" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <img src="l4.png" alt="Zelebrae Logo" class="h-8">
+                            <span class="text-gray-400">2023</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag">SOCIAL MEDIA</span>
+                            <span class="tag">PERFORMANCE MARKETING</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-8">
+                    <button class="bg-teal-600 text-white px-6 py-2 rounded-full">Portfolio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
