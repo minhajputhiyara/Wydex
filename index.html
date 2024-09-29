@@ -40,6 +40,23 @@
             font-size: 0.8rem;
             border:1px solid white;
         }
+
+        .service-item {
+            transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        .service-item.active {
+            background-color: rgba(85, 40, 6, 0.5); /* Dark brown with 50% opacity */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+        .nav-arrow {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .nav-arrow:hover {
+            transform: scale(1.1);
+        }
         .clients-section {
             position: relative;
             padding: 4rem 2rem 4rem 6rem;
@@ -99,10 +116,12 @@
 </head>
 <body class="bg-black">
     <!-- Header with centered navbar -->
-    <main class="px-4 pb-4 text-center text-white" style="background-image: url('images/Banner-background.jpg'); background-size:cover; min-height: 700px">
+    <main class="px-4 pb-4 text-center text-white" style="position: relative; min-height: 700px; background-image: url('images/Banner-background.jpg'); background-size: cover;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+        <div style="position: relative; z-index: 2;">
         <header class="container mx-auto px-4 pt-6 pb-24">
             <nav class="flex justify-between items-center">
-                <img src="images/Wydex-logo.png" alt="Wydex Media Logo" class="h-10">
+                <img src="images/Wydex-logo.png" alt="Wydex Media Logo" class="h-16">
                 <ul class="flex space-x-16">
                     <li><a href="#" class="text-lg font-bold hover:text-purple-300">Home</a></li>
                     <li><a href="#" class="text-lg font-bold hover:text-purple-300">About Us</a></li>
@@ -148,8 +167,8 @@
         <section id="services" class="relative bg-black text-white py-4">
             <div class="absolute left-0 top-0 bottom-0 w-24 flex items-center justify-center">
                 <h2 class="vertical-text text-4xl font-bold">
-                    <span class="bg-gray-600  px-6 py-8">SERVICES</span>
-                    </h2>
+                    <span class="bg-gray-600 px-6 py-8">SERVICES</span>
+                </h2>
             </div>
             <div class="container mx-auto px-24">
                 <div class="flex items-center justify-between mb-6">
@@ -157,44 +176,39 @@
                     <div>
                         <p class="text-sm mb-2">The best service we offer to you and we are ready to realize</p>
                         <p class="text-sm">the ideas you given us as best as possible</p>
-                        <button class="bg-teal-600 text-white px-4 py-2 rounded-full mb-8">Explore our Services</button>
+                        <button class="bg-teal-600 text-white px-4 py-2 rounded-full mt-4">Explore our Services</button>
                     </div>
-                    
                 </div>
-                
-                
-                
+        
                 <div class="grid grid-cols-2 gap-8">
                     <div>
-                        <div class="service-item pb-4 mb-4">
+                        <div id="service-1" class="service-item pb-4 mb-4 active" onclick="highlightService(0)">
                             <h3 class="text-4xl font-semibold mb-2">01 SEO Optimization</h3>
                             <p class="text-md text-gray-400">We optimize your website to rank higher on search engines, driving organic traffic and increasing visibility through keyword targeting, on-page SEO, and link building.</p>
                         </div>
-                        <div class="service-item pb-4 mb-4">
+                        <div id="service-2" class="service-item pb-4 mb-4" onclick="highlightService(1)">
                             <h3 class="text-4xl font-semibold mb-2">02 Social Media Marketing</h3>
                             <p class="text-md text-gray-400">Grow your brand's presence on platforms like Facebook and Instagram with targeted content, paid ads, and community engagement that boosts reach and conversions.</p>
                         </div>
-                        <div class="service-item pb-4 mb-4">
+                        <div id="service-3" class="service-item pb-4 mb-4" onclick="highlightService(2)">
                             <h3 class="text-4xl font-semibold mb-2">03 Web Design & Development</h3>
                             <p class="text-md text-gray-400">We build custom, responsive websites optimized for user experience, speed, and functionality to elevate your online presence and enhance conversions.</p>
                         </div>
                     </div>
                     <div class="flex items-center justify-center">
-                        <img src="images/ss.png" alt="Social Media Icons" class="w-3/4 max-w-full h-auto">
+                        <img id="service-image" src="images/ss.png" alt="Service Image" class="w-3/4 max-w-full h-auto">
                     </div>
                 </div>
-                
+        
                 <div class="flex justify-center mt-8">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-bounce">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-arrow animate-bounce" onclick="toggleService()">
                         <circle cx="12" cy="12" r="10"></circle>
                         <polyline points="8 12 12 16 16 12"></polyline>
                         <line x1="12" y1="8" x2="12" y2="16"></line>
                     </svg>
                 </div>
-                </div>
             </div>
         </section>
-
         <!-- Core Values Section (Black background, white text) -->
         <section id="core-values" class="relative bg-white text-black py-20">
             <div class="absolute left-0 top-0 bottom-0 w-24 flex items-center justify-center">
@@ -210,7 +224,7 @@
                             <p class="text-5xl font-semibold">Degree</p>
                             <p class="text-5xl font-semibold">Marketing Support</p>
                         </div>
-                        <img src="https://via.placeholder.com/50" alt="Marketing icon" class="ml-auto">
+                        <img src="images/support.png" alt="Marketing icon" class="w-56 h-56 object-cover">
                     </div>
                     
                     <p class="text-2xl mb-6">
@@ -239,9 +253,9 @@
                         <div class="flex-grow">
                             <div class="flex justify-between items-start mb-8">
                                 <div class="max-w-xl">
-                                    <p class="text-gray-400 mb-4">More than 25 successful projects, more than 30 satisfied clients. Join us on this creative journey with many success stories and see how we bring companies and businesses to life.</p>
+                                    <p class="text-2xl text-gray-400 mb-4">More than 25 successful projects, more than 30 satisfied clients. Join us on this creative journey with many success stories and see how we bring companies and businesses to life.</p>
                                 </div>
-                                <h2 class="text-4xl font-bold">Be inspired by<br>our work</h2>
+                                <h2 class="text-6xl font-bold">Be inspired by<br>our work</h2>
                             </div>
                             
                             <div class="grid grid-cols-2 gap-6">
@@ -310,47 +324,49 @@
         </section>
 
         
-        <!-- Testimonials Section (White background, black text) -->
-        <section id="testimonials" class="relative bg-white text-black py-20">
-            <div class="absolute left-0 top-0 bottom-0 w-24 flex items-center justify-center">
-                <h2 class="vertical-text text-4xl font-bold">
-                    <span class="bg-gray-200 px-6 py-8">TESTIMONIALS</span>
-                    </h2>
-            </div>
-            <div class="container mx-auto px-24">
-                <div class="flex-grow">
-                    <h2 class="text-4xl font-bold mb-8">They are satisfied with the<br>results we provide</h2>
-                    
-                    <div class="relative overflow-hidden">
-                        <div class="testimonial-slider flex transition-transform duration-300 ease-in-out">
-                            <!-- Testimonial 1 -->
-                            <div class="w-full flex-shrink-0">
-                                <p class="text-gray-600 mb-4">Exceptional service! The team at Wydex Media helped us boost our online presence and triple our website traffic in just six months. Their personalized approach and constant support made a real difference. Highly recommended!</p>
-                                <p class="font-bold">-John D.,</p>
-                                <p class="text-gray-500">CEO of BrightTech Solutions</p>
-                            </div>
-                            
-                            <!-- Testimonial 2 -->
-                            <div class="w-full flex-shrink-0">
-                                <p class="text-gray-600 mb-4">The Wydex Media team truly understands how to craft a digital strategy that works. They helped us grow our social media following and engagement while driving more sales through targeted content and email campaigns. They exceeded our expectations!</p>
-                                <p class="font-bold">Michael B</p>
-                                <p class="text-gray-500">Founder of UrbanStyle Apparel</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Navigation buttons -->
-                        <div class="absolute top-1/2 transform -translate-y-1/2 w-full flex justify-between">
-                            <button class="prev-btn bg-orange-400 text-white rounded-full w-10 h-10 flex items-center justify-center focus:outline-none">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <button class="next-btn bg-orange-400 text-white rounded-full w-10 h-10 flex items-center justify-center focus:outline-none">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
+        <!-- Testimonials Section -->
+<section id="testimonials" class="relative bg-white text-black py-20">
+    <div class="absolute left-0 top-0 bottom-0 w-24 flex items-center justify-center">
+        <h2 class="vertical-text text-4xl font-bold">
+            <span class="bg-gray-200 px-6 py-8">TESTIMONIALS</span>
+        </h2>
+    </div>
+    <div class="container mx-auto px-24">
+        <div class="flex-grow">
+            <h2 class="text-5xl font-bold mb-12">They are satisfied with the<br>results we provide</h2>
+            
+            <div class="grid grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div>
+                    <p class="text-gray-700 mb-4">Exceptional service! The team at Wydex Media helped us boost our online presence and triple our website traffic in just six months. Their personalized approach and constant support made a real difference. Highly recommended!</p>
+                    <p class="font-bold">-John D.,</p>
+                    <p class="text-gray-600">CEO of BrightTech Solutions</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div>
+                    <p class="text-gray-700 mb-4">The Wydex Media team truly understands how to craft a digital strategy that works. They helped us grow our social media following and engagement while driving more sales through targeted content and email campaigns. They exceeded our expectations!</p>
+                    <p class="font-bold">Michael B</p>
+                    <p class="text-gray-600">Founder of UrbanStyle Apparel</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+    
+    <!-- Navigation buttons -->
+    <div class="absolute right-8 top-8 flex space-x-2">
+        <button class="prev-btn bg-orange-400 text-white rounded-full w-10 h-10 flex items-center justify-center focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <button class="next-btn bg-orange-400 text-white rounded-full w-10 h-10 flex items-center justify-center focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+</section>
 
         <!-- Clients Section (Black background, white text) -->
         <section id="clients" class="relative min-h-screen bg-black text-white py-20">
@@ -461,8 +477,9 @@
             
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                 <div>
-                    <img src="/api/placeholder/150/50" alt="Wydex Media Logo" class="mb-4">
+                    <img src="images/Wydex-logo.png" alt="Wydex Media Logo" class="h-16">
                     <p class="text-sm text-gray-400">
+                        <br>
                         3rd floor,Hilite Business Park,Tower<br>
                         2(#2327) Hilite City, Calicut, India<br>
                         673014
@@ -510,5 +527,38 @@
             </div>
         </div>
     </footer>
+    <script>
+        let currentServiceIndex = 0;
+        const services = [
+            { image: "images/ss.png" },
+            { image: "images/social.jpeg" },
+            { image: "images/web.jpeg" }
+        ];
+    
+        function highlightService(index) {
+            const serviceItems = document.querySelectorAll('.service-item');
+            serviceItems.forEach((item, i) => {
+                item.classList.remove('active');
+                if (i === index) {
+                    item.classList.add('active');
+                    currentServiceIndex = index;
+                    document.getElementById('service-image').src = services[index].image;
+                }
+            });
+        }
+    
+    function toggleService(isScrollingUp) {
+        const arrow = document.querySelector('.nav-arrow');
+        if (isScrollingUp) {
+            arrow.style.transform = 'rotate(180deg)';
+            currentServiceIndex = (currentServiceIndex-1 + services.length) % services.length;
+        } else {
+            arrow.style.transform = 'rotate(0deg)';
+            currentServiceIndex = (currentServiceIndex+1) % services.length;
+        }
+        highlightService(currentServiceIndex);
+        
+    }
+    </script>
 </body>
 </html>

@@ -17,6 +17,11 @@
         }
         .service-item {
             border-bottom: 1px solid #333;
+            padding: 16px;
+            transition: background-color 0.3s;
+        }
+        .active {
+            background-color: rgba(38, 198, 218, 0.2);
         }
     </style>
 </head>
@@ -45,38 +50,64 @@
                         <p class="text-sm">the ideas you given us as best as possible</p>
                     </div>
                 </div>
-                
-                <button class="bg-teal-600 text-white px-4 py-2 rounded-full mb-8">Explore our Services</button>
-                
-                <div class="grid grid-cols-2 gap-8">
-                    <div>
-                        <div class="service-item pb-4 mb-4">
-                            <h3 class="text-xl font-semibold mb-2">01 SEO Optimization</h3>
-                            <p class="text-sm text-gray-400">We optimize your website to rank higher on search engines, driving organic traffic and increasing visibility through keyword targeting, on-page SEO, and link building.</p>
-                        </div>
-                        <div class="service-item pb-4 mb-4">
-                            <h3 class="text-xl font-semibold mb-2">02 Social Media Marketing</h3>
-                            <p class="text-sm text-gray-400">Grow your brand's presence on platforms like Facebook and Instagram with targeted content, paid ads, and community engagement that boosts reach and conversions.</p>
-                        </div>
-                        <div class="service-item pb-4 mb-4">
-                            <h3 class="text-xl font-semibold mb-2">03 Web Design & Development</h3>
-                            <p class="text-sm text-gray-400">We build custom, responsive websites optimized for user experience, speed, and functionality to elevate your online presence and enhance conversions.</p>
-                        </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div id="service-1" class="service-item active">
+                        <h3 class="text-xl font-semibold mb-2">01 SEO Optimization</h3>
+                        <p class="text-sm text-gray-400">We optimize your website to rank higher on search engines, driving organic traffic and increasing visibility through keyword targeting, on-page SEO, and link building.</p>
                     </div>
-                    <div class="flex items-center justify-center">
-                        <img src="path_to_social_media_icons_image.png" alt="Social Media Icons" class="max-w-full h-auto">
+                    <div id="service-2" class="service-item">
+                        <h3 class="text-xl font-semibold mb-2">02 Social Media Marketing</h3>
+                        <p class="text-sm text-gray-400">Grow your brand's presence on platforms like Facebook and Instagram with targeted content, paid ads, and community engagement that boosts reach and conversions.</p>
+                    </div>
+                    <div id="service-3" class="service-item">
+                        <h3 class="text-xl font-semibold mb-2">03 Web Design & Development</h3>
+                        <p class="text-sm text-gray-400">We build custom, responsive websites optimized for user experience, speed, and functionality to elevate your online presence and enhance conversions.</p>
                     </div>
                 </div>
-                
+
                 <div class="flex justify-center mt-8">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-bounce">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="8 12 12 16 16 12"></polyline>
-                        <line x1="12" y1="8" x2="12" y2="16"></line>
-                    </svg>
+                    <button onclick="prevService()" class="bg-teal-600 text-white px-4 py-2 rounded-full">▲</button>
+                    <button onclick="nextService()" class="bg-teal-600 text-white px-4 py-2 rounded-full ml-4">▼</button>
+                </div>
+
+                <div class="flex items-center justify-center mt-8">
+                    <img id="service-image" src="seo.jpg" alt="Service Image" class="max-w-full h-auto">
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        let currentServiceIndex = 0;
+        const services = [
+            { image: "images/ss.png" },
+            { image: "images/team.jpg" },
+            { image: "images/proskill.jpg" }
+        ];
+
+        function updateServiceDisplay() {
+            const serviceItems = document.querySelectorAll('.service-item');
+            serviceItems.forEach((item, index) => {
+                item.classList.remove('active');
+                if (index === currentServiceIndex) {
+                    item.classList.add('active');
+                }
+            });
+
+            // Update the image
+            document.getElementById('service-image').src = services[currentServiceIndex].image;
+        }
+
+        function nextService() {
+            currentServiceIndex = (currentServiceIndex + 1) % services.length;
+            updateServiceDisplay();
+        }
+
+        function prevService() {
+            currentServiceIndex = (currentServiceIndex - 1 + services.length) % services.length;
+            updateServiceDisplay();
+        }
+    </script>
 </body>
 </html>
