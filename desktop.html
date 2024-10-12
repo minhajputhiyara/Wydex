@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wydex Media - Building Brands for the Digital Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4A90E2',
+                        secondary: '#F5A623',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+
+        .portfolio-card {
+            background-color: #271717;
+            border-radius: 15px;
+            border:1px solid white;
+        }
+        .tag {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 35px;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border:1px solid white;
+        }
+
+        .service-item {
+            transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        .service-item.active {
+            background-color: rgba(85, 40, 6, 0.5); /* Dark brown with 50% opacity */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+        .nav-arrow {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .nav-arrow:hover {
+            transform: scale(1.1);
+        }
+        .clients-section {
+            position: relative;
+            padding: 4rem 2rem 4rem 6rem;
+        }
+        .vertical-text {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%) rotate(180deg);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+
+        }
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+        }
+        .logo-item {
+            background-color: #000000;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 1 / 1;
+        }
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        @media (max-width: 1024px) {
+            .logo-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .logo-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .logo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .clients-section {
+                padding-left: 4rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <!-- Header with centered navbar -->
+    <main class="px-4 pb-4 text-center text-white" style="position: relative; min-height: 700px; background-image: url('images/Banner-background.jpg'); background-size: cover;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+        <div style="position: relative; z-index: 2;">
+        <header class="container mx-auto px-4 pt-6 pb-24">
+            <nav class="flex justify-between items-center">
+                <img src="images/Wydex-logo.png" alt="Wydex Media Logo" class="h-16">
+                <ul class="flex space-x-16">
+                    <li><a href="#" class="text-lg font-bold hover:text-purple-300">Home</a></li>
+                    <li><a href="#" class="text-lg font-bold hover:text-purple-300">About Us</a></li>
+                    <li><a href="#" class="text-lg font-bold hover:text-purple-300">Services</a></li>
+                    <li><a href="#" class="text-lg font-bold hover:text-purple-300">Portfolio</a></li>
+                    <li><a href="#" class="text-lg font-bold hover:text-purple-300">Testimonials</a></li>
+                    <li><a href="#" class="text-lg font-bold hover:text-purple-300">Careers</a></li>
+                </ul>
+                <button class="font-bold bg-white text-purple-900 px-6 py-2 rounded-full hover:bg-purple-100">Contact</button>
+            </nav>
+        </header>
+        <h1 class="text-6xl font-bold mb-6">Building Brands for the <br> Digital Future</h1>
+        <p class="text-2xl mb-4 max-w-3xl mx-auto">
+            We excel at enhancing your brand's online presence with customized digital marketing strategies crafted to boost traffic and elevate engagement
+        </p>
+        <p class="text-3xl font-semibold mb-16">Let's grow together!</p>
+        <button class="bg-white text-purple-900 px-8 py-3 rounded-full text-3xl font-semibold hover:bg-purple-100">Get Started</button>
+    </main>
+
+
+        <!-- About Section (White background, black text) -->
+        <section id="about" class="relative bg-black text-white py-24 flex">
+            <div class="absolute left-0 top-0 bottom-0 w-24 flex items-center justify-center">
+                <h2 class="vertical-text text-4xl font-bold">
+                    <span class="bg-gray-600  px-6 py-8">ABOUT US</span>
+                    </h2>
+            </div>
+            <div class="flex-1 flex items-center justify-center text-center md:text-left px-4">
+                <div>
+                    <h2 class="text-4xl font-bold mb-4">At <span class="bg-teal-600 px-2">Wydex Media,</span> we are a digital marketing agency</h2>
+                    <p class="mb-2 text-4xl">focused on driving growth and elevating brands online.</p>
+                    <p class="text-4xl text-gray-400 mb-4">Our expert team crafts tailored strategies that boost <br>engagement and deliver measurable results. Let us help <br>you achieve digital success.</p>
+                    <div class="flex">
+                    <p class="text-lg text-sm mb-4 mr-12">Our team of experts consists of digital marketers, web developers, UI/UX designers, and<br> other creative professionals who are passionate about creating amazing digital experiences.</p>
+                    
+                    <button class="bg-teal-600 text-white text-xl ml-12 px-4 py-2 rounded-full mb-8">Know more</button>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (Black background, white text) -->
+        <section id="services" class="relative bg-black text-white py-4">
+            <div class="absolute left-0 top-0 bottom-0 w-24 flex items-center justify-center">
+                <h2 class="vertical-text text-4xl font-bold">
+                    <span class="bg-gray-600 px-6 py-8">SERVICES</span>
+                </h2>
+            </div>
+            <div class="container mx-auto px-24">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-5xl font-bold">Core Services</h2>
+                    <div>
+                        <p class="text-sm mb-2">The best service we offer to you and we are ready to realize</p>
+                        <p class="text-sm">the ideas you given us as best as possible</p>
+                        <button class="bg-teal-600 text-white px-4 py-2 rounded-full mt-4">Explore our Services</button>
+                    </div>
+                </div>
+        
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <div id="service-1" class="service-item pb-4 mb-4 active" onclick="highlightService(0)">
+                            <h3 class="text-4xl font-semibold mb-2">01 SEO Optimization</h3>
+                            <p class="text-md text-gray-400">We optimize your website to rank higher on search engines, driving organic traffic and increasing visibility through keyword targeting, on-page SEO, and link building.</p>
+                        </div>
+                        <div id="service-2" class="service-item pb-4 mb-4" onclick="highlightService(1)">
+                            <h3 class="text-4xl font-semibold mb-2">02 Social Media Marketing</h3>
+                            <p class="text-md text-gray-400">Grow your brand's presence on platforms like Facebook and Instagram with targeted content, paid ads, and community engagement that boosts reach and conversions.</p>
+                        </div>
+                        <div id="service-3" class="service-item pb-4 mb-4" onclick="highlightService(2)">
+                            <h3 class="text-4xl font-semibold mb-2">03 Web Design & Development</h3>
+                            <p class="text-md text-gray-400">We build custom, responsive websites optimized for user experience, speed, and functionality to elevate your online presence and enhance conversions.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img id="service-image" src="images/ss.png" alt="Service Image" class="w-3/4 max-w-full h-auto">
+                    </div>
+                </div>
+        
+                <div class="flex justify-center mt-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-arrow animate-bounce" onclick="toggleService()">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="8 12 12 16 16 12"></polyline>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                    </svg>
+                </div>
+            </div>
+        </section>
+        <!-- Core Values Section (Black background, white text) -->
+        <section id="core-values" class="relative bg-white text-black py-20">
+            <div class="absolute left-0 top-0 bottom-0 w-24 flex items-center justify-center">
+                <h2 class="vertical-text text-4xl font-bold">
+                    <span class="bg-gray-200 px-6 py-8">CORE VALUES</span>
+                </h2>
+            </div>
+            <div class="flex-1 flex items-center justify-center text-center md:text-left px-4 py-20">
+                <div class="px-8">
+                    <div class="flex items-center mb-6">
+                        <h2 class="text-8xl font-bold mr-4">360</h2>
+                        <div>
+                            <p class="text-5xl font-semibold">Degree</p>
+                            <p class="text-5xl font-semibold">Marketing Support</p>
+                        </div>
+                        <img src="images/support.png" alt="Marketing icon" class="w-56 h-56 object-cover">
+                    </div>
+                    
+                    <p class="text-2xl mb-6">
+                        We provide end-to-end marketing solutions, covering every touchpoint<br>
+                        of your brand's journey, ensuring a seamless and consistent approach<br>
+                        across all digital platforms.
+                    </p>
+                    
+                    <div class="bg-teal-500 w-1/4 h-2 rounded"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Portfolio Section (White background, black text) -->
+        <section id="portfolio" class="relative min-h-screen bg-black text-white py-20">
+            <div class="absolute left-0 top-0 bottom-0 w-24 flex items-center justify-center">
+                <h2 class="vertical-text text-4xl font-bold">
+                    <span class="bg-gray-600  px-6 py-8">PORTFOLIO</span>
+                    </h2>
+            </div>
+            <div class="container mx-auto px-24">
+                <div class="container mx-auto px-4 py-8">
+                    <div class="flex">
+                        <!-- Main content -->
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-start mb-8">
+                                <div class="max-w-xl">
+                                    <p class="text-2xl text-gray-400 mb-4">More than 25 successful projects, more than 30 satisfied clients. Join us on this creative journey with many success stories and see how we bring companies and businesses to life.</p>
+                                </div>
+                                <h2 class="text-6xl font-bold">Be inspired by<br>our work</h2>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-6">
+                                <!-- Portfolio Item 1 -->
+                                <div class="portfolio-card p-4">
+                                    <img src="images/Nilam-home.jpg" alt="Nielo Project" class="w-full h-2/3 object-cover rounded-lg mb-4">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <img src="images/Nilam-logo.png" alt="Nielo Logo" class="h-8">
+                                        <span class="text-gray-400">2024</span>
+                                    </div>
+                                    <div class="flex text-4xl flex-wrap gap-2">
+                                        <span class="tag">SOCIAL MEDIA</span>
+                                        <span class="tag">PERFORMANCE MARKETING</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Portfolio Item 2 -->
+                                <div class="portfolio-card p-4">
+                                    <img src="images/nadanbloggers.jpg" alt="Nadian Blogger's Project" class="w-full h-2/3 object-cover rounded-lg mb-4">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <img src="images/NAADAN-BLOGGER’S-copy.png" alt="Nadian Blogger's Logo" class="h-8">
+                                        <span class="text-gray-400">2024</span>
+                                    </div> 
+                                    <div class="flex text-4xl flex-wrap gap-2">
+                                        <span class="tag">PACKAGE DESIGN</span>
+                                        <span class="tag">PERFORMANCE MARKETING</span>
+                                        <span class="tag">BRANDING</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Portfolio Item 3 -->
+                                <div class="portfolio-card p-4">
+                                    <img src="images/proskill.jpg" alt="Proskill Project" class="w-full h-2/3 object-cover rounded-lg mb-4">
+                                    <div class="flex text-4xl justify-between items-center mb-2">
+                                        <img src="images/Proskill-Logo.png" alt="Proskill Logo" class="h-8">
+                                        <span class="text-gray-400">2024</span>
+                                    </div>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="tag">SOCIAL MEDIA</span>
+                                        <span class="tag">PERFORMANCE MARKETING</span>
+                                        <span class="tag">BRANDING</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Portfolio Item 4 -->
+                                <div class="portfolio-card p-4">
+                                    <img src="images/zebre.jpg" alt="Zelebrae Project" class="w-full h-2/3 object-cover rounded-lg mb-4">
+                                    <div class="flex text-4xl justify-between items-center mb-2">
+                                        <img src="images/Zelebrae-logo.png" alt="Zelebrae Logo" class="h-8">
+                                        <span class="text-gray-400">2023</span>
+                                    </div>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="tag">SOCIAL MEDIA</span>
+                                        <span class="tag">PERFORMANCE MARKETING</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center mt-8">
+                                <button class="bg-teal-600 text-3xl text-white px-6 py-2 rounded-full">Portfolio</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Testimonials Section -->
+<section id="testimonials" class="relative bg-white text-black py-20">
+    <div class="absolute left-0 top-0 bottom-0 w-24 flex items-center justify-center">
+        <h2 class="vertical-text text-4xl font-bold">
+            <span class="bg-gray-200 px-6 py-8">TESTIMONIALS</span>
+        </h2>
+    </div>
+    <div class="container mx-auto px-24">
+        <div class="flex-grow">
+            <h2 class="text-5xl font-bold mb-12">They are satisfied with the<br>results we provide</h2>
+            
+            <div class="grid grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div>
+                    <p class="text-gray-700 mb-4">Exceptional service! The team at Wydex Media helped us boost our online presence and triple our website traffic in just six months. Their personalized approach and constant support made a real difference. Highly recommended!</p>
+                    <p class="font-bold">-John D.,</p>
+                    <p class="text-gray-600">CEO of BrightTech Solutions</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div>
+                    <p class="text-gray-700 mb-4">The Wydex Media team truly understands how to craft a digital strategy that works. They helped us grow our social media following and engagement while driving more sales through targeted content and email campaigns. They exceeded our expectations!</p>
+                    <p class="font-bold">Michael B</p>
+                    <p class="text-gray-600">Founder of UrbanStyle Apparel</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation buttons -->
+    <div class="absolute right-8 top-8 flex space-x-2">
+        <button class="prev-btn bg-orange-400 text-white rounded-full w-10 h-10 flex items-center justify-center focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <button class="next-btn bg-orange-400 text-white rounded-full w-10 h-10 flex items-center justify-center focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+</section>
+
+        <!-- Clients Section (Black background, white text) -->
+        <section id="clients" class="relative min-h-screen bg-black text-white py-20">
+            <div class="absolute left-0 top-0 bottom-0 w-24 flex items-center justify-center">
+                <h2 class="vertical-text text-4xl font-bold">
+                    <span class="bg-gray-600  px-6 py-8">CLIENTS</span>
+                    </h2>
+            </div>
+            <div class="container mx-auto px-24">
+                <div class="section-content">
+                    <div class="flex py-12">
+                    <h2 class="font-bold text-6xl">Clients</h2>
+                    <p class="text-xl px-20">Trusted by businesses of all sizes, we proudly partner with industry leaders and growing brands to drive digital success. Here are some of the clients we've had the privilege to work with.</p>
+                    </div>
+                    <div class="logo-grid">
+                        <div class="logo-item"><img src="images/Proskill-Logo.png" alt="Client 1"></div>
+                        <div class="logo-item"><img src="images/Nilam-logo.png" alt="Client 2"></div>
+                        <div class="logo-item"><img src="images/Zelebrae-logo.png" alt="Client 3"></div>
+                        <div class="logo-item"><img src="images/Bambee-logo.png" alt="Client 4"></div>
+                        <div class="logo-item"><img src="images/PG-logo.png" alt="Client 5"></div>
+                        <div class="logo-item"><img src="images/NAADAN-BLOGGER’S-copy.png" alt="Client 6"></div>
+                        <div class="logo-item"><img src="images/Zooty.png" alt="Client 7"></div>
+                        <div class="logo-item"><img src="images/Istories.png" alt="Client 8"></div>
+                        <div class="logo-item"><img src="images/Foo-foods.png" alt="Client 9"></div>
+                        <div class="logo-item"><img src="images/Chillies.png" alt="Client 10"></div>
+                        <div class="logo-item"><img src="images/Fialovy.png" alt="Client 11"></div>
+                        <div class="logo-item"><img src="images/Linen-palace.png" alt="Client 12"></div>
+                        <div class="logo-item"><img src="images/Ather.png" alt="Client 24"></div>
+                        <div class="logo-item"><img src="images/Cobolt-logo.png" alt="Client 13"></div>
+                        <div class="logo-item"><img src="images/UMAI-logo.png" alt="Client 14"></div>
+                        <div class="logo-item"><img src="images/Savidham.png" alt="Client 15"></div>
+                        <div class="logo-item"><img src="images/Parcel-service-logo.png" alt="Client 16"></div>
+                        <div class="logo-item"><img src="images/Pogo.png" alt="Client 17"></div>
+                        <div class="logo-item"><img src="images/CARE.png" alt="Client 18"></div>
+                        <div class="logo-item"><img src="images/Interval.png" alt="Client 19"></div>
+                        <div class="logo-item"><img src="images/BNI-logo.png" alt="Client 20"></div>
+                        <div class="logo-item"><img src="images/Vhara.png" alt="Client 21"></div>
+                        <div class="logo-item"><img src="images/Fialovy.png" alt="Client 22"></div>
+                        <div class="logo-item"><img src="images/Mectron.png" alt="Client 23"></div>
+    
+                        <div class="logo-item"><img src="images/Boutiqueen.png" alt="Client 25"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Careers Section (White background, black text) -->
+        <section id="careers" class="relative bg-white text-black py-24">
+            <div class="absolute left-0 top-0 bottom-0 w-24 flex items-center justify-center">
+                <h2 class="vertical-text text-4xl font-bold">
+                    <span class="bg-gray-200 px-6 py-8">CAREERS</span>
+                </h2>
+            </div>
+            <div class="container mx-auto px-24 items-center">
+                <div class="flex-grow"></div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 p-8">
+                        <h1 class="text-6xl font-bold mb-4">Grow with Us<br>at <span class="text-teal-600">Wydex Media!</span></h1>
+                        <p class="text-2xl text-gray-600 mb-12">
+                            At Wydex Media, we believe in cultivating an environment where your creativity can flourish and your career can thrive. Join us, and together, let's build something amazing!
+                        </p>
+                        <button class="bg-teal-600 text-2xl text-white font-semibold py-2 px-4 rounded-full hover:bg-teal-700 transition duration-300">
+                            Explore Opportunities
+                        </button>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="images/team.jpg" alt="Wydex Media Team" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <!-- <section id="contact" class="relative min-h-screen bg-gray-100 py-20">
+            <div class="absolute left-0 top-0 bottom-0 w-24 flex items-center justify-center">
+                <h2 class="vertical-text text-4xl font-bold text-gray-800">CONTACT</h2>
+            </div>
+            <div class="container mx-auto px-24">
+                <div class="max-w-lg mx-auto">
+                    <form>
+                        <div class="mb-4">
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-primary">
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-primary">
+                        </div>
+                        <div class="mb-4">
+                            <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-primary"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-white py-24 px-4" style="background-image: url('images/footerbg.jpg');background-size: cover; background-position: center;";>
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-bold mb-4">Create something awsome<br>and extraordinary with us</h2>
+                <p class="text-gray-400 text-xl mb-8">with a lot of creativity, we can make your dream come true</p>
+                <button class="bg-teal-600 text-2xl text-white font-semibold py-2 px-6 rounded-full hover:bg-teal-700 transition duration-300">
+                    Contact us
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <img src="images/Wydex-logo.png" alt="Wydex Media Logo" class="h-16">
+                    <p class="text-sm text-gray-400">
+                        <br>
+                        3rd floor,Hilite Business Park,Tower<br>
+                        2(#2327) Hilite City, Calicut, India<br>
+                        673014
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Navigation</h3>
+                    <ul class="text-sm text-gray-400">
+                        <li class="mb-2">Home</li>
+                        <li class="mb-2">About us</li>
+                        <li class="mb-2">Services</li>
+                        <li class="mb-2">Portfolio</li>
+                        <li class="mb-2">Testimonials</li>
+                        <li class="mb-2">Careers</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Socials</h3>
+                    <ul class="text-sm text-gray-400">
+                        <li class="mb-2">Linked in</li>
+                        <li class="mb-2">Instagram</li>
+                        <li class="mb-2">Facebok</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="text-sm text-gray-400">
+                        <li class="mb-2">SEO Optimization</li>
+                        <li class="mb-2">Social Media Marketing</li>
+                        <li class="mb-2">PPC Advertising</li>
+                        <li class="mb-2">Content Marketing</li>
+                        <li class="mb-2">Email Marketing</li>
+                        <li class="mb-2">Web Design & Development</li>
+                        <li class="mb-2">Analytics and Reporting</li>
+                        <li class="mb-2">Digital Strategy & Consulting</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400 mb-4 md:mb-0">Wydex media © 2024 All rights reserved</p>
+                <p class="text-sm text-gray-400">
+                    <a href="#" class="hover:text-white">Privacy Policy</a> | <a href="#" class="hover:text-white">Terms & Conditions</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let currentServiceIndex = 0;
+        const services = [
+            { image: "images/ss.png" },
+            { image: "images/social.jpeg" },
+            { image: "images/web.jpeg" }
+        ];
+    
+        function highlightService(index) {
+            const serviceItems = document.querySelectorAll('.service-item');
+            serviceItems.forEach((item, i) => {
+                item.classList.remove('active');
+                if (i === index) {
+                    item.classList.add('active');
+                    currentServiceIndex = index;
+                    document.getElementById('service-image').src = services[index].image;
+                }
+            });
+        }
+    
+    function toggleService(isScrollingUp) {
+        const arrow = document.querySelector('.nav-arrow');
+        if (isScrollingUp) {
+            arrow.style.transform = 'rotate(180deg)';
+            currentServiceIndex = (currentServiceIndex-1 + services.length) % services.length;
+        } else {
+            arrow.style.transform = 'rotate(0deg)';
+            currentServiceIndex = (currentServiceIndex+1) % services.length;
+        }
+        highlightService(currentServiceIndex);
+        
+    }
+    </script>
+</body>
+</html>

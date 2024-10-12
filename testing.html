@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wydex Media - Building Brands for the Digital Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4A90E2',
+                        secondary: '#F5A623',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* ... (keep other existing styles) ... */
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.9);
+                z-index: 1000;
+                padding: 2rem;
+            }
+            .mobile-menu.active {
+                display: block;
+            }
+            .mobile-menu ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+            }
+            .mobile-menu li {
+                margin-bottom: 1.5rem;
+            }
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+            .desktop-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="text-white text-2xl">
+            <li><a href="#" class="hover:text-purple-300">Home</a></li>
+            <li><a href="#" class="hover:text-purple-300">About Us</a></li>
+            <li><a href="#" class="hover:text-purple-300">Services</a></li>
+            <li><a href="#" class="hover:text-purple-300">Portfolio</a></li>
+            <li><a href="#" class="hover:text-purple-300">Testimonials</a></li>
+            <li><a href="#" class="hover:text-purple-300">Careers</a></li>
+            <li><a href="#" class="bg-white text-purple-900 px-6 py-2 rounded-full">Contact</a></li>
+        </ul>
+    </div>
+
+    <main class="px-4 pb-4 text-center text-white" style="position: relative; min-height: 700px; background-image: url('images/Banner-background.jpg'); background-size: cover;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+        <div style="position: relative; z-index: 2;">
+            <header class="container mx-auto px-4 pt-6 pb-24">
+                <nav class="flex justify-between items-center">
+                    <img src="images/Wydex-logo.png" alt="Wydex Media Logo" class="h-16">
+                    <ul class="desktop-menu flex space-x-16">
+                        <li><a href="#" class="text-lg font-bold hover:text-purple-300">Home</a></li>
+                        <li><a href="#" class="text-lg font-bold hover:text-purple-300">About Us</a></li>
+                        <li><a href="#" class="text-lg font-bold hover:text-purple-300">Services</a></li>
+                        <li><a href="#" class="text-lg font-bold hover:text-purple-300">Portfolio</a></li>
+                        <li><a href="#" class="text-lg font-bold hover:text-purple-300">Testimonials</a></li>
+                        <li><a href="#" class="text-lg font-bold hover:text-purple-300">Careers</a></li>
+                    </ul>
+                    <button class="desktop-menu font-bold bg-white text-purple-900 px-6 py-2 rounded-full hover:bg-purple-100">Contact</button>
+                    <div class="hamburger hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </div>
+                </nav>
+            </header>
+            <h1 class="text-6xl font-bold mb-6">Building Brands for the <br> Digital Future</h1>
+            <p class="text-2xl mb-4 max-w-3xl mx-auto">
+                We excel at enhancing your brand's online presence with customized digital marketing strategies crafted to boost traffic and elevate engagement
+            </p>
+            <p class="text-3xl font-semibold mb-16">Let's grow together!</p>
+            <button class="bg-white text-purple-900 px-8 py-3 rounded-full text-3xl font-semibold hover:bg-purple-100">Get Started</button>
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

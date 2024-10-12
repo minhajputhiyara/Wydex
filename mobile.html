@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wydex Media - Building Brands for the Digital Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4A90E2',
+                        secondary: '#F5A623',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+        .portfolio-card {
+            background-color: #271717;
+            border-radius: 15px;
+            border: 1px solid white;
+        }
+        .tag {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 35px;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border: 1px solid white;
+        }
+        .service-item {
+            transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+        .service-item.active {
+            background-color: rgba(85, 40, 6, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .nav-arrow {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .nav-arrow:hover {
+            transform: scale(1.1);
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+        }
+        .mobile-menu.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <a href="#" class="text-2xl font-bold py-4">Home</a>
+        <a href="#" class="text-2xl font-bold py-4">About Us</a>
+        <a href="#" class="text-2xl font-bold py-4">Services</a>
+        <a href="#" class="text-2xl font-bold py-4">Portfolio</a>
+        <a href="#" class="text-2xl font-bold py-4">Testimonials</a>
+        <a href="#" class="text-2xl font-bold py-4">Careers</a>
+    </div>
+
+    <!-- Header -->
+    <header class="relative bg-black text-white py-4 px-4">
+        <div class="flex justify-between items-center">
+            <img src="images/Wydex-logo.png" alt="Wydex Media Logo" class="h-12">
+            <button id="menu-toggle" class="text-3xl">☰</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="px-4 py-12 text-center" style="background-image: url('images/Banner-background.jpg'); background-size: cover; background-position: center;">
+            <div style="background: rgba(0, 0, 0, 0.5); padding: 2rem;">
+                <h1 class="text-4xl font-bold mb-4">Building Brands for the Digital Future</h1>
+                <p class="text-lg mb-6">We excel at enhancing your brand's online presence with customized digital marketing strategies.</p>
+                <button class="bg-white text-purple-900 px-6 py-2 rounded-full text-lg font-semibold">Get Started</button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-black text-white py-12 px-4">
+            <h2 class="text-3xl font-bold mb-4">About <span class="bg-teal-600 px-2">Wydex Media</span></h2>
+            <p class="mb-4 text-lg">We are a digital marketing agency focused on driving growth and elevating brands online.</p>
+            <p class="text-gray-400 mb-6">Our expert team crafts tailored strategies that boost engagement and deliver measurable results.</p>
+            <button class="bg-teal-600 text-white px-4 py-2 rounded-full">Know more</button>
+        </section>
+
+        <!-- Services Section -->
+         <!-- Services Section -->
+        <!-- Services Section -->
+<!-- Services Section -->
+<section id="services" class="bg-black text-white py-12 px-4">
+    <h2 class="text-3xl font-bold mb-6">Core Services</h2>
+    <div id="service-1" class="service-item pb-4 mb-4 active">
+        <h3 class="text-2xl font-semibold mb-2">01 SEO Optimization</h3>
+        <p class="text-sm text-gray-400">We optimize your website to rank higher on search engines, driving organic traffic and increasing visibility.</p>
+    </div>
+    <div id="service-2" class="service-item pb-4 mb-4">
+        <h3 class="text-2xl font-semibold mb-2">02 Social Media Marketing</h3>
+        <p class="text-sm text-gray-400">Grow your brand's presence on platforms like Facebook and Instagram with targeted content and paid ads.</p>
+    </div>
+    <div id="service-3" class="service-item pb-4 mb-4">
+        <h3 class="text-2xl font-semibold mb-2">03 Web Design & Development</h3>
+        <p class="text-sm text-gray-400">We build custom, responsive websites optimized for user experience, speed, and functionality.</p>
+    </div>
+    <img id="service-image" src="images/ss.png" alt="Service Image" class="w-full mt-4">
+
+    <div class="flex justify-center mt-8">
+        <svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-arrow animate-bounce" onclick="toggleService()">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="8 12 12 16 16 12"></polyline>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+        </svg>
+    </div>
+</section>
+
+
+
+        
+        <!-- Portfolio Section -->
+        <!-- Portfolio Section -->
+<section id="portfolio" style="background-color: black; color: white; padding: 20px 16px;">
+    <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 24px; display: flex; align-items: center; justify-content: center;">
+    </div>
+    <div style="max-width: 1200px; margin: auto; padding: 32px 16px;">
+        <div style="margin-bottom: 32px; text-align: center;">
+            <h2 style="font-size: 32px; font-weight: bold; margin-bottom: 16px;">
+                Be inspired by<br>our work
+            </h2>
+            <p style="font-size: 18px; color: gray; margin-bottom: 16px;">
+                More than 25 successful projects, more than 30 satisfied clients. Join us on this creative journey with many success stories and see how we bring companies and businesses to life.
+            </p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+            <!-- Portfolio Item 1 -->
+            <div class="portfolio-card" style="background-color: #1A202C; padding: 16px; border-radius: 8px;">
+                <img src="images/Nilam-home.jpg" alt="Nielo Project" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <img src="images/Nilam-logo.png" alt="Nielo Logo" style="height: 32px;">
+                    <span style="color: gray;">2024</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                    <span class="tag" style="background-color: teal; padding: 4px 8px; border-radius: 4px;">SOCIAL MEDIA</span>
+                    <span class="tag" style="background-color: teal; padding: 4px 8px; border-radius: 4px;">PERFORMANCE MARKETING</span>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 2 -->
+            <div class="portfolio-card" style="background-color: #1A202C; padding: 16px; border-radius: 8px;">
+                <img src="images/nadanbloggers.jpg" alt="Nadian Blogger's Project" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <img src="images/NAADAN-BLOGGER’S-copy.png" alt="Nadian Blogger's Logo" style="height: 32px;">
+                    <span style="color: gray;">2024</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                    <span class="tag" style="background-color: teal; padding: 4px 8px; border-radius: 4px;">PACKAGE DESIGN</span>
+                    <span class="tag" style="background-color: teal; padding: 4px 8px; border-radius: 4px;">PERFORMANCE MARKETING</span>
+                    <span class="tag" style="background-color: teal; padding: 4px 8px; border-radius: 4px;">BRANDING</span>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 3 -->
+            <div class="portfolio-card" style="background-color: #1A202C; padding: 16px; border-radius: 8px;">
+                <img src="images/proskill.jpg" alt="Proskill Project" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <img src="images/Proskill-Logo.png" alt="Proskill Logo" style="height: 32px;">
+                    <span style="color: gray;">2024</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                    <span class="tag" style="background-color: teal; padding: 4px 8px; border-radius: 4px;">SOCIAL MEDIA</span>
+                    <span class="tag" style="background-color: teal; padding: 4px 8px; border-radius: 4px;">PERFORMANCE MARKETING</span>
+                    <span class="tag" style="background-color: teal; padding: 4px 8px; border-radius: 4px;">BRANDING</span>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 4 -->
+            <div class="portfolio-card" style="background-color: #1A202C; padding: 16px; border-radius: 8px;">
+                <img src="images/zebre.jpg" alt="Zelebrae Project" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <img src="images/Zelebrae-logo.png" alt="Zelebrae Logo" style="height: 32px;">
+                    <span style="color: gray;">2023</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                    <span class="tag" style="background-color: teal; padding: 4px 8px; border-radius: 4px;">SOCIAL MEDIA</span>
+                    <span class="tag" style="background-color: teal; padding: 4px 8px; border-radius: 4px;">PERFORMANCE MARKETING</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; margin-top: 32px;">
+            <button style="background-color: teal; color: white; font-size: 20px; padding: 12px 24px; border-radius: 24px;">Portfolio</button>
+        </div>
+    </div>
+</section>
+
+
+     <!-- Testimonials Section -->
+<section id="testimonials" style="background-color: white; color: black; padding: 20px 16px; position: relative;">
+    <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 24px; display: flex; align-items: center; justify-content: center;">
+    </div>
+    <div style="max-width: 1200px; margin: auto; padding: 32px 16px; overflow: hidden;">
+        <h2 style="font-size: 32px; font-weight: bold; margin-bottom: 32px; text-align: center;">
+            They are satisfied with the<br>results we provide
+        </h2>
+
+        <div class="slider" style="display: flex; transition: transform 0.5s ease;">
+            <!-- Testimonial 1 -->
+            <div class="testimonial" style="min-width: 100%; padding: 16px; box-sizing: border-box; background-color: #F7FAFC; border-radius: 8px;">
+                <p style="color: #4A5568; margin-bottom: 12px;">
+                    Exceptional service! The team at Wydex Media helped us boost our online presence and triple our website traffic in just six months. Their personalized approach and constant support made a real difference. Highly recommended!
+                </p>
+                <p style="font-weight: bold;">- John D.,</p>
+                <p style="color: #718096;">CEO of BrightTech Solutions</p>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="testimonial" style="min-width: 100%; padding: 16px; box-sizing: border-box; background-color: #F7FAFC; border-radius: 8px;">
+                <p style="color: #4A5568; margin-bottom: 12px;">
+                    The Wydex Media team truly understands how to craft a digital strategy that works. They helped us grow our social media following and engagement while driving more sales through targeted content and email campaigns. They exceeded our expectations!
+                </p>
+                <p style="font-weight: bold;">- Michael B.,</p>
+                <p style="color: #718096;">Founder of UrbanStyle Apparel</p>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; margin-top: 16px;">
+            <button id="prev" style="background-color: teal; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;"><</button>
+            <button id="next" style="background-color: teal; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; margin-left: 8px;">></button>
+        </div>
+    </div>
+</section>
+
+<script>
+    let currentIndex = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    const totalTestimonials = testimonials.length;
+
+    function showTestimonial(index) {
+        const slider = document.querySelector('.slider');
+        slider.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    document.getElementById('next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalTestimonials;
+        showTestimonial(currentIndex);
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalTestimonials) % totalTestimonials;
+        showTestimonial(currentIndex);
+    });
+
+    // Initialize the first testimonial
+    showTestimonial(currentIndex);
+</script>
+
+
+        <!-- Clients Section (Black background, white text) -->
+        <section id="clients">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h2 style="font-size: 24px; font-weight: bold;">Clients</h2>
+                <p>Trusted by businesses of all sizes, we proudly partner with industry leaders and growing brands to drive digital success. Here are some of the clients we've had the privilege to work with.</p>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Proskill-Logo.png" alt="Client 1" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Nilam-logo.png" alt="Client 2" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Zelebrae-logo.png" alt="Client 3" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Bambee-logo.png" alt="Client 4" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/PG-logo.png" alt="Client 5" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/NAADAN-BLOGGER’S-copy.png" alt="Client 6" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Zooty.png" alt="Client 7" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Istories.png" alt="Client 8" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Foo-foods.png" alt="Client 9" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Chillies.png" alt="Client 10" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Fialovy.png" alt="Client 11" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Linen-palace.png" alt="Client 12" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Ather.png" alt="Client 13" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Cobolt-logo.png" alt="Client 14" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/UMAI-logo.png" alt="Client 15" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Savidham.png" alt="Client 16" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Parcel-service-logo.png" alt="Client 17" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Pogo.png" alt="Client 18" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/CARE.png" alt="Client 19" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Interval.png" alt="Client 20" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/BNI-logo.png" alt="Client 21" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Vhara.png" alt="Client 22" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Fialovy.png" alt="Client 23" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Mectron.png" alt="Client 24" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="flex: 1 1 30%; max-width: 30%; display: flex; justify-content: center;">
+                    <img src="images/Boutiqueen.png" alt="Client 25" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </section>
+        <!-- career section -->
+        <section id="careers" style="background-color: white; color: black; padding: 24px 16px;">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h2 style="font-size: 24px; font-weight: bold;">CAREERS</h2>
+            </div>
+            <div style="text-align: center;">
+                <h1 style="font-size: 28px; font-weight: bold; margin-bottom: 16px;">
+                    Grow with Us<br>at <span style="color: teal;">Wydex Media!</span>
+                </h1>
+                <p style="font-size: 18px; color: gray; margin-bottom: 24px;">
+                    At Wydex Media, we believe in cultivating an environment where your creativity can flourish and your career can thrive. Join us, and together, let's build something amazing!
+                </p>
+                <button style="background-color: teal; color: white; font-size: 18px; font-weight: 600; padding: 12px 24px; border-radius: 24px; cursor: pointer; transition: background-color 0.3s;">
+                    Explore Opportunities
+                </button>
+            </div>
+            <div style="margin-top: 16px;">
+                <img src="images/team.jpg" alt="Wydex Media Team" style="width: 100%; height: auto; object-fit: cover;">
+            </div>
+        </section>
+        
+
+        <!-- Footer -->
+        <!-- Footer -->
+<footer style="color: white; padding: 24px 16px; background-image: url('images/footerbg.jpg'); background-size: cover; background-position: center;">
+    <div style="text-align: center; margin-bottom: 24px;">
+        <h2 style="font-size: 24px; font-weight: bold; margin-bottom: 16px;">
+            Create something awesome<br>and extraordinary with us
+        </h2>
+        <p style="color: gray; font-size: 16px; margin-bottom: 16px;">
+            With a lot of creativity, we can make your dream come true
+        </p>
+        <button style="background-color: teal; color: white; font-size: 18px; font-weight: 600; padding: 12px 24px; border-radius: 24px; cursor: pointer; transition: background-color 0.3s;">
+            Contact us
+        </button>
+    </div>
+    
+    <div style="display: flex; flex-direction: column; gap: 24px; text-align: center;">
+        <div>
+            <img src="images/Wydex-logo.png" alt="Wydex Media Logo" style="height: 64px;">
+            <p style="font-size: 12px; color: gray;">
+                3rd floor, Hilite Business Park, Tower<br>
+                2(#2327) Hilite City, Calicut, India<br>
+                673014
+            </p>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; max-width: 600px; margin: 0 auto;">
+            <div style="flex: 1; min-width: 120px;">
+                <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 8px;">Navigation</h3>
+                <ul style="font-size: 14px; color: gray; padding: 0; list-style-type: none;">
+                    <li class="mb-2">Home</li>
+                    <li class="mb-2">About us</li>
+                    <li class="mb-2">Services</li>
+                    <li class="mb-2">Portfolio</li>
+                    <li class="mb-2">Testimonials</li>
+                    <li class="mb-2">Careers</li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 120px;">
+                <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 8px;">Socials</h3>
+                <ul style="font-size: 14px; color: gray; padding: 0; list-style-type: none;">
+                    <li class="mb-2">LinkedIn</li>
+                    <li class="mb-2">Instagram</li>
+                    <li class="mb-2">Facebook</li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 120px;">
+                <h3 style="font-size: 16px; font-weight: bold; margin-bottom: 8px;">Services</h3>
+                <ul style="font-size: 14px; color: gray; padding: 0; list-style-type: none;">
+                    <li class="mb-2">SEO Optimization</li>
+                    <li class="mb-2">Social Media Marketing</li>
+                    <li class="mb-2">PPC Advertising</li>
+                    <li class="mb-2">Content Marketing</li>
+                    <li class="mb-2">Email Marketing</li>
+                    <li class="mb-2">Web Design & Development</li>
+                    <li class="mb-2">Analytics and Reporting</li>
+                    <li class="mb-2">Digital Strategy & Consulting</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div style="border-top: 1px solid gray; padding-top: 16px; margin-top: 16px; text-align: center;">
+        <p style="font-size: 12px; color: gray; margin-bottom: 8px;">Wydex Media © 2024 All rights reserved</p>
+        <p style="font-size: 12px; color: gray;">
+            <a href="#" style="color: gray; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: gray; text-decoration: none;">Terms & Conditions</a>
+        </p>
+    </div>
+</footer>
+
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+    <script>
+        let currentServiceIndex = 0;
+        const services = [
+            { image: "images/ss.png" },
+            { image: "images/social.jpeg" },
+            { image: "images/web.jpeg" }
+        ];
+    
+        function highlightService(index) {
+            const serviceItems = document.querySelectorAll('.service-item');
+            serviceItems.forEach((item, i) => {
+                item.classList.remove('active');
+                if (i === index) {
+                    item.classList.add('active');
+                    document.getElementById('service-image').src = services[index].image;
+                }
+            });
+        }
+    
+        function toggleService(isScrollingUp) {
+            if (isScrollingUp) {
+                currentServiceIndex = (currentServiceIndex - 1 + services.length) % services.length;
+            } else {
+                currentServiceIndex = (currentServiceIndex + 1) % services.length;
+            }
+            highlightService(currentServiceIndex);
+        }
+    
+        // Example usage: Toggle service on arrow click
+        document.querySelector('.nav-arrow').addEventListener('click', function() {
+            const isScrollingUp = this.classList.contains('up'); // Assuming you have a class to determine direction
+            toggleService(isScrollingUp);
+        });
+    </script>
+    
+</body>
+</html>
